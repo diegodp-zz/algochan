@@ -3831,9 +3831,3 @@ span.post-capcode[data-cap="## Admin"] {
     line-height: 3em !important
 }
 
-
-.logo-img {
-    max-width: 100%;
-    height: auto;
-    width: auto\9; /* IE8 */
-  }
