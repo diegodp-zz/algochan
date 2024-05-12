@@ -318,7 +318,7 @@ p {
 	display: block;
 	box-shadow: 0 0 3px black;
 	width: auto;
-	max-height: 100px;
+	max-height: 150px;
 	box-sizing: border-box;
 	object-fit: cover;
 	margin: 3px;
@@ -326,8 +326,8 @@ p {
 }
 
 .catalog-thumb.attachmentimg, .catalog-thumb.audioimg, .catalog-thumb.spoilerimg {
-	height: 64px;
-	width: 64px;
+	height: 150px;
+	width: 150px;
 }
 
 .catalog-thumb.small {
@@ -1402,6 +1402,11 @@ table.boardtable.w900 td:last-child {
 	color: white;
 }
 
+table.boardtable .nobreak {
+	word-break: keep-all;
+	overflow-wrap: break-word;
+}
+
 /* ^="f" means only where attachment is false, to prevent showing on attachment files with audio or video mime type */
 .post-file-src[data-type="audio"][data-attachment^="f"]::after,
 .post-file-src[data-type="video"][data-attachment^="f"]::after {
@@ -1473,6 +1478,7 @@ table, .boardtable {
 .nowrap {
 	white-space: nowrap;
 }
+
 
 #settingsmodal{
 	min-width: 400px;

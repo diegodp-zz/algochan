@@ -6,21 +6,24 @@ block head
 
 block content
 	h1.board-title #{meta.siteName}
-
-
+	img.logo(src='/file/indiachan-square.png' title='' width='256' height='256')
 	.table-container.flex-center.mv-10.text-center
 		table
 			tr
-				th.alt #{__('AlgoChan')}
+				th.alt #{__('Welcome')}
 			tr
 				td
 					pre.no-m-p
-						| should edit views/pages/home.pug, then run "pm2 reload all" and "gulp html" to customise this page.
-	if recentNews && recentNews.length > 0
+						| Indiachan [ˈɪndiəʧæn]: dive into the bharata of online musings and shitposts.
+	if (recentNews && recentNews.length > 0) || globalAnnouncement.markdown
 		.table-container.flex-center.mv-10
 			table.newstable
 				tr
 					th(colspan=3) #{__('Latest News')}
+				if globalAnnouncement.markdown
+					tr
+						td(colspan=3)
+							pre.post-message.no-m-p.text-center !{globalAnnouncement.markdown}
 				each post in recentNews
 					tr
 						td
@@ -64,10 +67,10 @@ block content
 								|  
 						a(href=`/${board._id}/index.html`) /#{board._id}/ - #{board.settings.name}
 					td #{board.settings.description}
-					td #{board.pph}
-					td #{board.ppd}
-					td #{board.ips}
-					td #{board.sequence_value-1}
+					td.nobreak #{board.pph}
+					td.nobreak #{board.ppd}
+					td.nobreak #{board.ips}
+					td.nobreak #{board.sequence_value-1}
 			if localStats.total-localStats.unlisted > boards.length
 				tr
 					td(colspan=6)
@@ -81,6 +84,8 @@ block content
 						pre.no-m-p
 							| #{__('There are currently %s public boards, %s in total. Sitewide, %s posts have been made in the last day, %s in the last hour, %s in total.', localStats.total-localStats.unlisted, localStats.total, localStats.ppd, localStats.pph, localStats.posts)}
 							| #{__('%s files are being served, totaling %s.', fileStats.count, fileStats.totalSizeString)}
+							| 
+							a(href='http://op5e5ltcaznu4iyozojeyqmk53yr4ezookzmbs7uj6fl2gd4cnmib2ad.onion') 🧅Tor
 		if enableWebring === true && webringStats != null
 			.table-container.flex-center.mv-10.text-center
 				table(style='max-width:450px')
