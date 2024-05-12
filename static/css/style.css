@@ -46,6 +46,12 @@ main.minimal {
     flex-shrink: 0
 }
 
+.row2 {
+    display: flex;
+    justify-content: center;
+   
+}
+
 .col {
     display: flex;
     flex-direction: column;

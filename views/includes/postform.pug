@@ -22,6 +22,15 @@ section.form-wrapper.flex-center
 				.label #{__('Name')}
 				input.mr-1(type='text', name='name', placeholder=board.settings.defaultName maxlength=globalLimits.fieldLength.name)
 				a.close.postform-style(href='#!') ×
+
+				section.row2
+					.postform-style.dummy-link.web3-login.ct-r1.ph-5
+						img(src='/file/defly.png' width=24 height=24)
+						| #{__(' Defly Wallet')}
+					.postform-style.dummy-link.web3-login.ct-r1.ph-5
+						img(src='/file/pera.png' width=24 height=24)
+						| #{__(' Pera Wallet')}		
+						
 			if board.settings.sageOnlyEmail && !modview
 				section.row
 					.label #{__('Sage')}
