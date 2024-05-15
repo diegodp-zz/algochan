@@ -1,3 +1,8 @@
+
+//- Google Tag Manager
+script(src="/js/ga.js")
+
+
 unless minimal
 	small.footer#bottom
 		a(href='/news.html') #{__('news')}
@@ -13,18 +18,17 @@ unless minimal
 			| Promote your coin, 
 			a(href='mailto:dev@algochan.org?subject=Promote%20your%20coin') Contact
 
+      iframe(src="https://www.googletagmanager.com/ns.html?id=GTM-TXKLQXVV" height="0" width="0" style="display:none;visibility:hidden")
+
+
 		div(style="display:none")
 
 //- "render" script - for scripted things that are blocking
 script(src=`/js/render.js?v=${GTM-TXKLQXVVcommit}`)
 
 
-//- Google Tag Manager
-script(src="/js/ga.js")
 
-//- Google Tag Manager (noscript)
-noscript
-  iframe(src="https://www.googletagmanager.com/ns.html?id=GTM-TXKLQXVV" height="0" width="0" style="display:none;visibility:hidden")
+
 
 
 
